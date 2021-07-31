@@ -22,6 +22,8 @@ export type Goal = {
   start: Scalars["GraphQLDateTime"];
   end: Scalars["GraphQLDateTime"];
   count: Scalars["Int"];
+  created: Scalars["GraphQLDateTime"];
+  updated?: Maybe<Scalars["GraphQLDateTime"]>;
 };
 
 export type Project = {
@@ -32,11 +34,15 @@ export type Project = {
   count: Scalars["Int"];
   goals?: Maybe<Array<Goal>>;
   wordcounts?: Maybe<Array<WordCount>>;
+  created: Scalars["GraphQLDateTime"];
+  updated?: Maybe<Scalars["GraphQLDateTime"]>;
 };
 
 export type User = {
   id: Scalars["ID"];
   name: Scalars["String"];
+  created: Scalars["GraphQLDateTime"];
+  lastLogin?: Maybe<Scalars["GraphQLDateTime"]>;
 };
 
 export type WordCount = {

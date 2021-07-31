@@ -3,6 +3,8 @@ scalar GraphQLDateTime
 type User {
   id: ID!
   name: String!  
+  created: GraphQLDateTime!
+  lastLogin: GraphQLDateTime  
 }
 type Project {
     id: ID!
@@ -12,6 +14,8 @@ type Project {
     count: Int!
     goals: [Goal!]
     wordcounts: [WordCount!]
+    created: GraphQLDateTime!
+    updated: GraphQLDateTime
 }
 type Goal {
     id: ID!
@@ -19,6 +23,8 @@ type Goal {
     start: GraphQLDateTime!
     end: GraphQLDateTime!
     count: Int!
+    created: GraphQLDateTime!
+    updated: GraphQLDateTime
 }
 type WordCount {
     id: ID!
