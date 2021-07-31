@@ -1,3 +1,5 @@
+scalar GraphQLDateTime
+
 type User {
   id: ID!
   name: String!  
@@ -5,6 +7,21 @@ type User {
 type Project {
     id: ID!
     name: String!
-    description: String!
+    description: String
     active: Boolean!
+    count: Int!
+    goals: [Goal!]
+    wordcounts: [WordCount!]
+}
+type Goal {
+    id: ID!
+    active: Boolean!
+    start: GraphQLDateTime!
+    end: GraphQLDateTime!
+    count: Int!
+}
+type WordCount {
+    id: ID!
+    created: GraphQLDateTime!
+    count: Int!
 }
