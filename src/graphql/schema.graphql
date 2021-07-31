@@ -1,0 +1,10 @@
+type User {
+  id: ID!
+  name: String!  
+}
+type Project {
+    id: ID!
+    name: String!
+    description: String!
+    active: Boolean!
+}
