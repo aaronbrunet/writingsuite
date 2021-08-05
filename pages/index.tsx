@@ -7,6 +7,13 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const [project] = useState({
+    id: "1",
+    name: "My First Project",
+    active: true,
+    created: Date.now(),
+    wordcounts: []
+  })
 
   const [wordcounts] = useState([{
         id: "1",
@@ -20,18 +27,18 @@ export default function Home() {
       }] as WordCount[])
   const [sum,setSum] = useState(0)
 
-
   useEffect(() => {
     let wcSum = wordcounts.reduce((sum,acc)=>sum + acc.count,0)
     setSum(()=>wcSum)
-  },[wordcounts])
+    project.wordcounts = wordcounts
+  },[])
   
-  const wordcountFormat = wordcounts.map((wc)=>(
+  const wordcountFormat = project.wordcounts.map((wc)=>(
     <div key={wc.id}>
           <div>
             <div>{wc.count}</div>
           </div>
-          <td>{wc.created}</td>
+          {/* <td>{wc.created}</td> */}
     </div>
   ))    
   return (
@@ -50,7 +57,8 @@ export default function Home() {
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
-        {wordcounts.length > 0 ? (
+        <div>{project.name}</div>
+        {project.wordcounts.length > 0 ? (
         <>
         <div>Total: {sum}</div>
         <div>
