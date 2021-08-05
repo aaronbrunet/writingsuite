@@ -3,7 +3,7 @@ scalar GraphQLDateTime
 type User {
   id: ID!
   name: String!  
-  created: GraphQLDateTime!
+  created: GraphQLDateTime
   lastLogin: GraphQLDateTime  
 }
 type Project {
@@ -37,7 +37,7 @@ type Query {
     User(id: ID!): User    
     Project(id: ID!): Project    
     allProjects: [Project!]
-    allUserProjects(user: User!): [Project!]
+    allUserProjects(user: User!, id: ID!): [Project!]
     allProjectWordCounts(project: Project!): [WordCount!]
     allProjectGoals(project: Project!): [Goal!]
     WordCount(id: ID!): WordCount

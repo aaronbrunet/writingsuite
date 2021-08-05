@@ -12,6 +12,7 @@
   "dependencies": {
     "@graphql-codegen/cli": "^1.21.8",
     "@graphql-codegen/typescript": "^1.23.0",
+    "@graphql-codegen/typescript-resolvers": "^2.0.0",
     "@types/node": "^16.4.8",
     "@types/react": "^17.0.15",
     "apollo-server-micro": "^3.1.1",
