@@ -8,6 +8,7 @@ type User {
 }
 type Project {
     id: ID!
+    user: User!
     name: String!
     description: String
     active: Boolean!
@@ -30,4 +31,15 @@ type WordCount {
     id: ID!
     created: GraphQLDateTime!
     count: Int!
+}
+
+type Query {
+    User(id: ID!): User    
+    Project(id: ID!): Project    
+    allProjects: [Project!]
+    allUserProjects(user: User!): [Project!]
+    allProjectWordcounts(project: Project!): [WordCount!]
+    allProjectGoals(project: Project!): [Goal!]
+    Wordcount(id: ID!): Wordcount
+    Goal(id: ID!): Goal
 }
