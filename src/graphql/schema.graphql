@@ -38,8 +38,8 @@ type Query {
     Project(id: ID!): Project    
     allProjects: [Project!]
     allUserProjects(user: User!): [Project!]
-    allProjectWordcounts(project: Project!): [WordCount!]
+    allProjectWordCounts(project: Project!): [WordCount!]
     allProjectGoals(project: Project!): [Goal!]
-    Wordcount(id: ID!): Wordcount
+    WordCount(id: ID!): WordCount
     Goal(id: ID!): Goal
 }

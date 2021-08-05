@@ -28,6 +28,7 @@ export type Goal = {
 
 export type Project = {
   id: Scalars["ID"];
+  user: User;
   name: Scalars["String"];
   description?: Maybe<Scalars["String"]>;
   active: Scalars["Boolean"];
@@ -36,6 +37,45 @@ export type Project = {
   wordcounts?: Maybe<Array<WordCount>>;
   created: Scalars["GraphQLDateTime"];
   updated?: Maybe<Scalars["GraphQLDateTime"]>;
+};
+
+export type Query = {
+  User?: Maybe<User>;
+  Project?: Maybe<Project>;
+  allProjects?: Maybe<Array<Project>>;
+  allUserProjects?: Maybe<Array<Project>>;
+  allProjectWordCounts?: Maybe<Array<WordCount>>;
+  allProjectGoals?: Maybe<Array<Goal>>;
+  WordCount?: Maybe<WordCount>;
+  Goal?: Maybe<Goal>;
+};
+
+export type QueryUserArgs = {
+  id: Scalars["ID"];
+};
+
+export type QueryProjectArgs = {
+  id: Scalars["ID"];
+};
+
+export type QueryAllUserProjectsArgs = {
+  user: User;
+};
+
+export type QueryAllProjectWordCountsArgs = {
+  project: Project;
+};
+
+export type QueryAllProjectGoalsArgs = {
+  project: Project;
+};
+
+export type QueryWordCountArgs = {
+  id: Scalars["ID"];
+};
+
+export type QueryGoalArgs = {
+  id: Scalars["ID"];
 };
 
 export type User = {
